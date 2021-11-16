@@ -2,6 +2,7 @@ const FILES_TO_CACHE = [
   "/",
   "/index.html",
   "/index.js",
+  "/db.js",
   "/dist/bundle.js",
   "/styles.css",
   "/icons/icon-192x192.png",
@@ -52,7 +53,7 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  // handle runtime GET requests for data from /api routes
+  // handle runtime requests for data from /api routes
   if (event.request.url.includes("/api/transaction")) {
     // make network request and fallback to cache if network request fails (offline)
     event.respondWith(
